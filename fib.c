@@ -20,7 +20,7 @@ int fibRec( int num ) {
       return 1;
 
     }
-    
+
     return fibRec(num - 1) + fibRec(num - 2);
 }
 
@@ -54,6 +54,10 @@ int fibIter( int num ) {
 
 
 int main( int argc , char *argv[] ) {
+   if (argc != 4) {
+      printf("Usage: %s <integer> <r/i> <filename>\n", argv[0]);
+      return 1;
+   }
 
    int file_num;
 
@@ -63,22 +67,21 @@ int main( int argc , char *argv[] ) {
 
    FILE *file = fopen(argv[3], "r");
 
-   fscanf(file, "%d", &file_num);
+   if (file == NULL) {
+      printf("Error checking of file and params is not necessary '%s'\n", argv[3]);
+      return 1;
+    }
+    fscanf(file, "%d", &file_num);
+    fclose(file);
 
-   fclose(file);
+    num = atoi(argv[1]) + file_num;
 
-   num = atoi(argv[1]) + file_num;
+    if (argv[2][0] == 'r') 
+        compute = fibRec(num);
+    else 
+        compute = fibIter(num);
 
-   if (argv[2][0] == 'r') {
+    printf("%d\n", compute);
 
-      compute = fibRec(num);
-
-   } else {
-
-      compute = fibIter(num);
-   }
-
-   printf( "%d\n", compute );
-
-   return 0;
+    return 0;
 }
