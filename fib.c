@@ -5,17 +5,17 @@
 // Recursive function
 int fibRec( int num ) {
 
-    if (num <= 1) {
+   if (num <= 1) {
 
       return 0;
 
-    } else if (num == 2) {
+   } else if (num == 2) {
 
       return 1;
 
-    }
+   }
 
-    return fibRec(num - 1) + fibRec(num - 2);
+   return fibRec(num - 1) + fibRec(num - 2);
 }
 
 
@@ -63,18 +63,18 @@ int main( int argc , char *argv[] ) {
    if (file == NULL) {
       printf("Error checking of file and params is not necessary '%s'\n", argv[3]);
       return 1;
-    }
-    fscanf(file, "%d", &file_num);
-    fclose(file);
+   }
+   fscanf(file, "%d", &file_num);
+   fclose(file);
 
-    num = atoi(argv[1]) + file_num;
+   num = atoi(argv[1]) + file_num;
 
-    if (argv[2][0] == 'r') 
-        compute = fibRec(num);
-    else 
-        compute = fibIter(num);
+   if (argv[2][0] == 'r') 
+      compute = fibRec(num);
+   else 
+      compute = fibIter(num);
 
-    printf("%d\n", compute);
+   printf("%d\n", compute);
 
-    return 0;
+   return 0;
 }
