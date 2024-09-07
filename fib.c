@@ -10,14 +10,18 @@
 
 // Recursive function
 int fibRec( int num ) {
-    
-   if ( num == 1 ) {
+
+    if (num <= 1) {
+
       return 0;
-    }
-    if ( num == 2 ) {
+
+    } else if (num == 2) {
+
       return 1;
-   }
-   return ( fibRec( num - 1 ) + fibRec( num - 2 ) );
+
+    }
+    
+    return fibRec(num - 1) + fibRec(num - 2);
 }
 
 
