@@ -1,9 +1,3 @@
-// Beatriz Torres Archundia
-// CPSC 351 - 08
-// 09.06.24
-// btorre0@csu.fullerton.edu
-// btorre0
-
 #include <stdio.h>
 #include <stdlib.h>
 
