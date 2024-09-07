@@ -1,4 +1,11 @@
+// Beatriz Torres Archundia
+// CPSC 351 - 08
+// 09.06.24
+// btorre0@csu.fullerton.edu
+// Github Username: Btorre0
 #include <stdio.h>
+
+
 
 // Recursive function
 int fibRec( int num ) {
@@ -14,6 +21,8 @@ int fibRec( int num ) {
 
    return fibRec(num - 1) + fibRec(num - 2);
 }
+
+
 
 // Iterative function
 int fibIter( int num ) {
@@ -31,6 +40,8 @@ int fibIter( int num ) {
 
    return b;
 }
+
+
 
 int main( int argc , char *argv[] ) {
 
