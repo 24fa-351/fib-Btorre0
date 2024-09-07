@@ -10,7 +10,6 @@ int fibRec( int num ) {
    } else if (num == 2) {
 
       return 1;
-
    }
 
    return fibRec(num - 1) + fibRec(num - 2);
@@ -22,11 +21,6 @@ int fibIter( int num ) {
    int a = 0;
    int b = 1;
    int c;
-
-   if (num == 1) {
-
-      return 0;
-   }
 
    for (int i = 3; i <= num; i++) {
 
@@ -54,14 +48,6 @@ int main( int argc , char *argv[] ) {
    sscanf(argv[1], "%d", &num);
 
    FILE *file = fopen(argv[3], "r");
-
-   if (file == NULL) {
-
-      printf("Error opening file '%s'\n", argv[3]);
-
-      return 1;
-
-   }
 
    fscanf(file, "%d", &file_num);
 
